@@ -1,8 +1,6 @@
 import requests
 from json import load
 
-content_list = ["",""]
-
 with open("config.json", "r") as f:
     config = load(f)
 token = config["token"]
@@ -17,5 +15,5 @@ def post_message(token, channel, content):
 while 1:
     for i in token:
         for j in config["channels"]:
-            for k in content_list:
+            for k in config["content_list"]:
                 post_message(i,j,k)
