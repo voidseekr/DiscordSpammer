@@ -10,9 +10,9 @@ Force à toi et à ton serveur\
 
 ## Installation
 
-Dans `config.json`:\
+Dans `config.json` :\
 Tu mets les token de toi et tes potes dans `"token"`\
-Dans `"channels"` tu mets les ID de tous les channels que tu veux spam
+Dans `"channels"` tu mets les ID de tous les channels que tu veux spam\
 Dans `"content_list"` tu mets les messages que le bot va spammer
 
 Après t'as plus qu'à lancer le dernier executable [disponible ici](https://github.com/voidseekr/DiscordSpammer/releases/latest)

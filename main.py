@@ -1,9 +1,14 @@
 import requests
 from json import load
+from content_list import content_list
+from random import choice
 
 with open("config.json", "r") as f:
     config = load(f)
 token = config["token"]
+
+if not content_list:
+    content_list = config["content_list"]
 
 def post_message(token, channel, content):
     url = f"https://discord.com:443/api/v9/channels/{channel}/messages"
@@ -11,9 +16,9 @@ def post_message(token, channel, content):
     json={"content": f"{content}"}
     a = requests.post(url, headers=headers, json=json)
     print(a.status_code)
+    print(content)
 
 while 1:
     for i in token:
         for j in config["channels"]:
-            for k in config["content_list"]:
-                post_message(i,j,k)
+            post_message(i,j,"@everyone " + choice(content_list))
