@@ -19,6 +19,4 @@ def post_message(token, channel, content):
     print(content)
 
 while 1:
-    for i in token:
-        for j in config["channels"]:
-            post_message(i,j,"@everyone " + choice(content_list))
+    post_message(choice(config["token"]),choice(config['channels']),"@everyone " + choice(content_list))
